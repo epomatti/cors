@@ -1,13 +1,18 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const port = 3000
 
 require('dotenv').config()
-const CORS_ENABLED = process.env.CORS_ENABLED;
+const CORS = process.env.CORS;
+
+if (CORS === "express") {
+  app.use(cors())
+}
 
 app.get('/hello', (req, res) => {
-  if (CORS_ENABLED) {
-    setCors(res);
+  if (CORS === "manual") {
+    setCorsManually(res);
   }
   response = {
     msg: `Hello, ${req.query.name}!`
@@ -19,7 +24,7 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-const setManualCors = (res) => {
+const setCorsManually = (res) => {
   res.header("Access-Control-Allow-Origin", "*");
   // res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
   // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
