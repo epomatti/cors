@@ -3,13 +3,16 @@ const cors = require('cors')
 const app = express()
 const port = 3000
 
+// Loads CORS environment variables
 require('dotenv').config()
 const CORS = process.env.CORS;
 
+// Enable Express CORS if configured
 if (CORS === "express") {
   app.use(cors())
 }
 
+// Test method
 app.get('/hello', (req, res) => {
   if (CORS === "manual") {
     setCorsManually(res);
@@ -20,6 +23,7 @@ app.get('/hello', (req, res) => {
   res.send(response)
 })
 
+// Server start
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
