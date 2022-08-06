@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>CORS Sandbox</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+  <h2>CORS Sandbox</h2>
+
+  <p>Enter your name and submit to validate CORS:</p>
+
+  <input id="txtName" placeholder="Your Name">
+
+  <button type="button" onclick="myFunction()">Submit</button>
+
+  <p id="result"></p>
+
+  <script>
+    function myFunction() {
+      let name = document.getElementById("txtName").value;
+      fetch(`http://localhost:3000/hello?name=${name}`)
+        .then((response) => response.json())
+        .then((data) => document.getElementById("result").innerHTML = text)
+        .catch(reason => {
+          document.getElementById("result").innerHTML = reason
+        })
+    }
+  </script>
+
+</body>
+
+</html>
