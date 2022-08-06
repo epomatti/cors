@@ -23,7 +23,7 @@ yarn dev
 Check that the service is running:
 
 ```sh
-curl localhost:3000/hello?name=John
+curl 'localhost:3000/hello?name=John'
 ```
 
 Finally, open the HTML `index.html` in a browser to interact with the configuration.
