@@ -6,7 +6,7 @@
 
   <p>Enter your name and submit to validate CORS:</p>
 
-  <input id="txtName" placeholder="Your Name">
+  <input id="txtName" placeholder="Your Name" value="John" />
 
   <button type="button" onclick="myFunction()">Submit</button>
 
@@ -15,7 +15,7 @@
   <script>
     function myFunction() {
       let name = document.getElementById("txtName").value;
-      fetch(`http://localhost:3000/hello?name=${name}`)
+      fetch(`http://localhost:8080/hello?name=${name}`)
         .then((response) => response.json())
         .then((data) => {
           document.getElementById("result").innerHTML = data.msg
