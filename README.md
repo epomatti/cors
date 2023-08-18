@@ -9,9 +9,8 @@ yarn install
 Create the `.env` and setup the CORS configuration:
 
 ```sh
+# Other options are "express" and "none"
 CORS_MODE="manual"
-# CORS_MODE="express"
-# CORS_MODE="none"
 ```
 
 Start the server:
