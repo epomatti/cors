@@ -9,8 +9,9 @@ const MODE = process.env.CORS_MODE;
 if (MODE === "express") {
   app.use(cors());
 } else if (MODE === "express_with_options") {
+  const ORIGIN = process.env.CORS_MODE_OPTION_ORIGIN;
   var options = {
-    origin: 'http://example.com',
+    origin: ORIGIN,
     optionsSuccessStatus: 200
   }
   app.use(cors(options));
