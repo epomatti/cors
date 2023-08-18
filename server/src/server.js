@@ -8,6 +8,12 @@ const MODE = process.env.CORS_MODE;
 
 if (MODE === "express") {
   app.use(cors());
+} else if (MODE === "express_with_options") {
+  var options = {
+    origin: 'http://example.com',
+    optionsSuccessStatus: 200
+  }
+  app.use(cors(options));
 }
 
 app.get('/hello', (req, res) => {

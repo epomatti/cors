@@ -9,7 +9,7 @@ yarn install
 Create the `.env` and setup the CORS configuration:
 
 ```sh
-# Other options are "express" and "none"
+# Other options are "express", "express_with_options", and "none"
 CORS_MODE="manual"
 ```
 
