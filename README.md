@@ -1,4 +1,4 @@
-# CORS Sandbox
+# CORS sandbox
 
 Install dependencies:
 
@@ -9,9 +9,9 @@ yarn install
 Create the `.env` and setup the CORS configuration:
 
 ```sh
-CORS="manual"
-# CORS="express"
-# CORS="none"
+CORS_MODE="manual"
+# CORS_MODE="express"
+# CORS_MODE="none"
 ```
 
 Start the server:
@@ -40,4 +40,4 @@ terraform apply -auto-approve
 
 WebSite should be available here:
 
-http://bucket-s3-web-56789.s3-website.sa-east-1.amazonaws.com
+https://bucket-s3-web-56789.s3-website.sa-east-1.amazonaws.com
